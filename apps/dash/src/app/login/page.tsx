@@ -46,12 +46,12 @@ export default function LoginPage() {
       body: JSON.stringify({ email, password }),
     });
 
-    if (data.ok) {
-      const { sessionToken } = await data.json();
-      updateSessionToken(sessionToken);
-      setToast({ text: "登录成功" });
-      router.push("/");
-    }
+    
+    const { sessionToken } = await data.json();
+    updateSessionToken(sessionToken);
+    setToast({ text: "登录成功" });
+    router.push("/");
+    
   };
 
   return (
