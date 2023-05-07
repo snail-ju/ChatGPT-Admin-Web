@@ -46,7 +46,6 @@ export default function LoginPage() {
       body: JSON.stringify({ email, password }),
     });
 
-    
     const { sessionToken } = await data.json();
     updateSessionToken(sessionToken);
     setToast({ text: "登录成功" });
